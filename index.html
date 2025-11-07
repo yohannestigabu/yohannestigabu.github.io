@@ -6,6 +6,7 @@
   <title>Yohannes Tigabu | Data Science Portfolio</title>
 
   <style>
+    /* ===== GENERAL STYLES ===== */
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f9fafb;
@@ -13,36 +14,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background-color: #003366;
-      color: white;
-    }
-
-    header img {
-      width: 140px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #fff;
-    }
-
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 2em;
-    }
-
-    header p {
-      font-size: 1.1em;
-      color: #e0e0e0;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      scroll-behavior: smooth;
     }
 
     h2 {
@@ -61,32 +33,114 @@
       text-decoration: underline;
     }
 
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 70px 20px 50px;
+      background: linear-gradient(135deg, #002b5c, #004aad);
+      color: white;
+      position: relative;
+    }
+
+    header img {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #e0e0e0;
+    }
+
     .button {
       display: inline-block;
-      background-color: #003366;
+      background-color: #cc0000;
       color: white;
       padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
-      margin: 10px 0;
+      margin: 10px 8px;
       font-weight: 500;
+      transition: all 0.3s ease;
     }
 
     .button:hover {
-      background-color: #004a99;
+      background-color: #e62e2e;
+      box-shadow: 0 0 12px rgba(255, 99, 99, 0.4);
     }
 
-    .project {
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    section {
       margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.7s ease-in-out;
     }
 
-    .project img {
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== PROJECT CARD ===== */
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-card img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-top: 15px;
     }
 
+    /* ===== SKILLS SECTION ===== */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .skills img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills img:hover {
+      transform: scale(1.2);
+    }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 30px;
@@ -98,11 +152,15 @@
     footer a {
       color: #ffb3b3;
     }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 1.7em; }
+      .container { padding: 30px 15px; }
+    }
   </style>
 </head>
 
 <body>
-
   <!-- ===== HEADER ===== -->
   <header>
     <img src="profile.jpg" alt="Yohannes Tigabu" />
@@ -112,38 +170,39 @@
   </header>
 
   <div class="container">
-
     <!-- ===== ABOUT ===== -->
     <section id="about">
       <h2>👋 About Me</h2>
       <p>
-        I'm a data-driven learner passionate about transforming real-world problems into intelligent solutions.
+        I’m a data-driven learner passionate about transforming real-world problems into intelligent solutions.
         I specialize in <strong>Machine Learning</strong>, <strong>Data Visualization</strong>, and <strong>Predictive Analytics</strong>.
-        My focus is on end-to-end solutions — from raw data to deployed applications.
+        My focus is on <em>end-to-end ML solutions</em> — from raw data to deployed applications.
       </p>
     </section>
 
-    <!-- ===== PROJECT ===== -->
-    <section class="project" id="ksi">
+    <!-- ===== KSI PROJECT ===== -->
+    <section id="ksi">
       <h2>🚗 KSI Collision Severity Predictor</h2>
-      <p>
-        <strong>Goal:</strong> Predict whether a Toronto traffic collision will result in a
-        <strong>Fatal</strong> or <strong>Non-Fatal Injury</strong> using open police data.
-      </p>
-      <p><strong>Tech Stack:</strong> Python • Pandas • Scikit-Learn • Streamlit</p>
-      <p>
-        <a href="https://yohannestigabu-ksi-collision-predictor.streamlit.app" class="button" target="_blank">🌐 Live App on Streamlit</a>
-        <a href="https://github.com/yohannestigabu/ksi-collision-predictor" class="button" target="_blank">🔗 GitHub Repo</a>
-      </p>
-      <img src="assets/app_preview.png" alt="KSI Collision Predictor Screenshot" />
+      <div class="project-card">
+        <p>
+          <strong>Goal:</strong> Classify serious Toronto collisions as <strong>Fatal</strong> or <strong>Non-Fatal Injury</strong>
+          using open police data (KSI dataset).
+        </p>
+        <p><strong>Tech Stack:</strong> Python • Pandas • Scikit-Learn • Streamlit</p>
+        <p>
+          <a href="https://yohannestigabu-ksi-collision-predictor.streamlit.app" class="button" target="_blank">🌐 Live App</a>
+          <a href="https://github.com/yohannestigabu/ksi-collision-predictor" class="button" target="_blank">🔗 GitHub Repo</a>
+        </p>
+        <img src="assets/app_preview.png" alt="KSI Collision Predictor Screenshot" />
+      </div>
     </section>
 
-    <!-- ===== PROJECTS IN PROGRESS ===== -->
+    <!-- ===== OTHER PROJECTS ===== -->
     <section id="projects">
-      <h2>🧠 Other Projects</h2>
+      <h2>🧠 Other Projects On the way soon</h2>
       <ul>
-        <li>🩺 <strong>Diabetes Prediction</strong> using Deep Learning (TensorFlow)</li>
-        <li>🗺️ <strong>Toronto Crime Clustering</strong> using K-Means</li>
+        <li>🩺 <strong>Diabetes Prediction</strong> — MLP model using TensorFlow & Keras.</li>
+        <li>🗺️ <strong>Toronto Crime Clustering</strong> — K-Means + Folium map visualization.</li>
       </ul>
     </section>
 
@@ -157,23 +216,43 @@
         <strong>Version Control:</strong> Git, GitHub<br />
         <strong>Data Engineering:</strong> Databricks, PySpark (in progress)
       </p>
+
+      <div class="skills">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/>
+      </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact">
       <h2>📫 Contact</h2>
       <p>
-        📧 <a href="mailto:yourname@email.com">yohannestigabu1@gmail.com</a><br />
-        💼 <a href="https://linkedin.com/in/your-linkedin" target="_blank">https://www.linkedin.com/in/yohannes-tigabu-fetle-938aba108/</a><br />
-        💻 <a href="https://github.com/yohannestigabu" target="_blank">https://github.com/yohannestigabu</a>
+        📧 <a href="mailto:yohannestigabu1@gmail.com">yohannestigabu1@gmail.com</a><br />
+        💼 <a href="https://linkedin.com/in/yohannes-tigabu-fetle-938aba108/" target="_blank">LinkedIn Profile</a><br />
+        💻 <a href="https://github.com/yohannestigabu" target="_blank">GitHub</a>
       </p>
     </section>
-
   </div>
 
   <!-- ===== FOOTER ===== -->
   <footer>
     © 2025 Yohannes Tigabu | Built with ❤️ & Data
   </footer>
+
+  <!-- ===== SCROLL ANIMATION ===== -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>
