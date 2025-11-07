@@ -1,3 +1,4 @@
+<img src="profile.jpg" alt="Yohannes Tigabu" width="140" style="border-radius:50%; margin-bottom:10px;"/>
 # 👋 Hi, I'm Yohannes Tigabu  
 ### Machine Learning & Data Science Portfolio  
 
@@ -10,8 +11,11 @@ I build machine learning projects that focus on real-world applications — safe
 **Goal:** Predict whether a Toronto traffic collision will result in a **Fatal** or **Non-Fatal Injury** using open data.  
 **Dataset:** Toronto Police Service Killed or Seriously Injured (KSI) Open Data  
 **Tech Stack:** Python • Pandas • Scikit-Learn • Streamlit  
-**Result:** 76% model accuracy with clear interpretability and an interactive app.
 
+🌐 [Live App](https://yohannestigabu-ksi-collision-predictor.streamlit.app)  
+🔗 [GitHub Repository](https://github.com/yohannestigabu/ksi-collision-predictor)  
+
+![KSI App Screenshot](https://raw.githubusercontent.com/yohannestigabu/ksi-collision-predictor/main/assets/app_preview.png)
 - 🔗 [GitHub Repository](https://github.com/yohannestigabu/ksi-collision-predictor)  
 - 🌐 [Live App on Streamlit](https://yohannestigabu-ksi-collision-predictor.streamlit.app)
 
