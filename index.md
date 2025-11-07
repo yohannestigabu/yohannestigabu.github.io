@@ -42,6 +42,11 @@ My focus areas include predictive modeling, data storytelling, and practical AI 
 
 ---
 
+
+<a href="Yohannes_Tigabu_Resume.pdf" class="button" download>📄 Download Résumé</a>
+
+---
+
 ## 📫 Contact  
 - 📧 **Email:** yohannestigabu1@gmail.com  
 - 💼 [LinkedIn]([https://linkedin.com/in/your-linkedin](https://www.linkedin.com/in/yohannes-tigabu-fetle-938aba108/))  
